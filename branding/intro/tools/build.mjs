@@ -40,13 +40,12 @@ for (const id of ids) {
 
 // 4) dự án mẫu
 const copy = (from, to) => { mkdirSync(dirname(join(root, to)), { recursive: true }); copyFileSync(join(root, from), join(root, to)); };
+// mẫu HyperFrames chỉ gắn kiểu P1 (nhiều block có tiếng trong compositions/ thì lint báo trùng tiếng); mẫu Remotion có đủ mọi kiểu
+copy('hyperframes/pika-intro-p1.html', 'hyperframes/example/compositions/pika-intro-p1.html');
+if (existsSync(join(root, 'sound/mix-p1.wav'))) copy('sound/mix-p1.wav', 'hyperframes/example/assets/pika-intro/mix-p1.wav');
 for (const id of ids) {
   const low = id.toLowerCase();
-  copy(`hyperframes/pika-intro-${low}.html`, `hyperframes/example/compositions/pika-intro-${low}.html`);
-  if (existsSync(join(root, `sound/mix-${low}.wav`))) {
-    copy(`sound/mix-${low}.wav`, `hyperframes/example/assets/pika-intro/mix-${low}.wav`);
-    copy(`sound/mix-${low}.wav`, `remotion/example/public/pika-intro/mix-${low}.wav`);
-  }
+  if (existsSync(join(root, `sound/mix-${low}.wav`))) copy(`sound/mix-${low}.wav`, `remotion/example/public/pika-intro/mix-${low}.wav`);
 }
 for (const f of ['pika-intro.js', 'pika-intro.d.ts', 'toolkit.js', 'logo-paths.js']) copy(`core/${f}`, `remotion/example/src/pika-intro/core/${f}`);
 for (const f of ['index.js', ...files]) copy(`core/variants/${f}`, `remotion/example/src/pika-intro/core/variants/${f}`);
