@@ -1,0 +1,53 @@
+{
+ "name": "Pika",
+ "owner": "Step Up",
+ "colors": {
+  "pika": "#46C4D7",
+  "facePlate": "#FFFFFF",
+  "black": "#000000",
+  "white": "#FFFFFF"
+ },
+ "lockups": {
+  "horizontal": {
+   "role": "primary",
+   "use": "web header, email, slides, 16:9 video",
+   "files": {
+    "color": "lockups/pika-horizontal-color.svg",
+    "black": "lockups/pika-horizontal-black.svg",
+    "white": "lockups/pika-horizontal-white.svg"
+   }
+  },
+  "stacked": {
+   "role": "vertical",
+   "use": "splash, avatar, poster, 9:16 video",
+   "files": {
+    "color": "lockups/pika-stacked-color.svg",
+    "black": "lockups/pika-stacked-black.svg",
+    "white": "lockups/pika-stacked-white.svg"
+   }
+  },
+  "icon": {
+   "role": "face only",
+   "use": "app icon, favicon, small sizes",
+   "files": {
+    "color": "icon/pika-icon-color.svg",
+    "black": "icon/pika-icon-black.svg",
+    "white": "icon/pika-icon-white.svg"
+   }
+  }
+ },
+ "variants": {
+  "color": "on white or light backgrounds",
+  "black": "one-color, on light backgrounds; face plate is a cut-out",
+  "white": "one-color, on dark backgrounds; face plate is a cut-out"
+ },
+ "svgIds": {
+  "pika-face": "face group",
+  "face-plate": "white face plate (color only)",
+  "ears": "ears",
+  "head": "head ring (evenodd)",
+  "eye-left": "left eye",
+  "eye-right": "right eye",
+  "word-pika": "word Pika (letters word-pika-P/i/k/a)"
+ }
+}

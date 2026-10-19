@@ -1,26 +1,34 @@
-# Intro logo Pika (lab)
+# Pika intro
 
-Intro logo Pika 5 giây, đang ở giai đoạn chọn kiểu chuyển động. Hình: đầu Pika và chữ "Pika", xanh `#46C4D7`. Mỗi kiểu vẽ bằng code (canvas), có tiếng.
+Intro logo Pika 5 giây, 8 kiểu chuyển động để chọn, có tiếng (giọng "Pika"). Chuyển động là code, dùng lại được trong HyperFrames và Remotion; AI đọc `AGENTS.md`.
 
 | Kiểu | Chuyển động |
 |---|---|
-| P1 | Rơi và bật: đầu rơi xuống nảy, chữ bật lên lần lượt |
-| P2 | Rơi giữa màn, nhảy sang trái, chữ trượt ra từ sau mặt (nhịp intro Pika Math) |
-| P3 | Đầu nhỏ nhảy qua từng chữ, mỗi chỗ đáp để lại một chữ |
-| P4 | Đầu lăn vào, chữ rơi xuống nảy |
+| P1 | Đầu rơi xuống nảy, chữ bật lên lần lượt |
+| P2 | Đầu rơi to giữa màn, nhảy sang trái, chữ trượt ra từ sau mặt |
+| P3 | Đầu nhỏ nhảy qua chỗ từng chữ, mỗi chỗ đáp để lại một chữ |
+| P4 | Đầu lăn vào, chữ rơi từ trên xuống nảy |
 | P5 | Chữ lên trước, Pika ló mặt sau chữ "a", nhảy vọt qua đầu chữ về chỗ |
-| P6 | Vẽ nét rồi đổ màu |
+| P6 | Vẽ nét viền rồi đổ màu |
 | P7 | Đôi mắt hiện trước, đầu loang ra từ mắt, mắt liếc theo chữ |
 | P8 | Giọt nước rơi phình thành đầu, giọt nhỏ văng thành chữ |
 
 ## Xem
 
-- Video: `lab/video/` (`pika-intro-P1..P8.mp4` có tiếng; `so-sanh-*-cung-luc.mp4` 4 kiểu chạy cùng lúc; `so-sanh-*-lan-luot.mp4` nối 4 kiểu có tiếng).
-- Chạy lab: `python3 serve.py` trong thư mục này, mở `http://127.0.0.1:8842/lab/index.html` (bấm "Nghe P1"… để nghe từng kiểu).
+- Mở `preview.html` bằng Chrome: chọn kiểu, nền, bật tiếng, kéo thanh thời gian.
+- `preview/`: MP4 từng kiểu, có tiếng.
 
-## Tiếng
+## Lấy logo
 
-`sound/voice-pika.wav`: giọng "Pika"; nguồn ở `sound/SOURCE.md`. Tiếng động tạo bằng code theo bảng `CUES` trong `lab/index.html`.
+`logo/lockups/` (ngang, dọc) và `logo/icon/` (chỉ mặt Pika), mỗi cái 3 bản: `-color`, `-black` (in một màu, nền sáng), `-white` (nền tối). Dùng ở đâu: `logo/brand.json`.
+
+## Thêm kiểu mới
+
+Chép `core/variants/_template.js`, làm theo mục "Thêm kiểu mới" trong `AGENTS.md`, rồi `node tools/build.mjs` và `node tools/check.mjs`.
+
+## Xuất video
+
+Cần Chrome, Node 18+, Python 3 có numpy, ffmpeg. `tools/export.sh` ra `export/`: MP4, MOV nền trong suốt, PNG có alpha cho mọi kiểu.
 
 ## Bản quyền
 
